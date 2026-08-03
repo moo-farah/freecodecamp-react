@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-   <nav className="bg-amber-400 px-4 py-5 mt-2">
+   <nav className="bg-amber-400 px-4 py-5">
       <div className="flex flex-row items-center justify-around">
         <ul className="flex flex-row items-center gap-4">
           <li><a href="/company">Company</a></li>
