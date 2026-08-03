@@ -2,4 +2,16 @@
 
 @import "tailwindcss";
 
+theme {
+    html {
+        font-size: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+}
 
+:root {
+    --background: var(#ffffff);
+}
+
+body {
+    background-color: var(--background);
+}
