@@ -1,4 +1,3 @@
-import  HeroImage  from '../assets/2.png'
 import { ArrowDown } from 'lucide-react';
 
 
@@ -23,7 +22,7 @@ const Hero = () => {
                   <ArrowDown size={18} />
                 </button>
             </div>
-            <img src={HeroImage} alt="" />
+            <img src="/src/assets/2.png" alt="Hero" className="mt-8 max-w-full" />
             
         </div>
        

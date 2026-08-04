@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 
 const Logo = () => (
@@ -47,38 +48,38 @@ const Navbar = () => {
         {/* Main navbar container */}
         <div className="flex flex-row justify-between items-center">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink: 0">
             <Logo />
           </div>
 
           {/* Desktop Navigation - Hidden on mobile */}
           <ul className="hidden md:flex flex-row items-center gap-8">
             <li>
-              <a href="/" onClick={handleClick} className="text-gray-800 hover:text-gray-600 transition-colors">
+              <Link to="/" className="text-gray-800 hover:text-gray-600 transition-colors">
                 Company
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/resources" className="text-gray-800 hover:text-gray-600 transition-colors">
+              <Link to="/resources" className="text-gray-800 hover:text-gray-600 transition-colors">
                 Resources
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/customers" className="text-gray-800 hover:text-gray-600 transition-colors">
+              <Link to="/customers" className="text-gray-800 hover:text-gray-600 transition-colors">
                 Customers
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/pricing" className="text-gray-800 hover:text-gray-600 transition-colors">
+              <Link to="/pricing" className="text-gray-800 hover:text-gray-600 transition-colors">
                 Pricing
-              </a>
+              </Link>
             </li>
           </ul>
 
           {/* Desktop Buttons - Hidden on mobile */}
           <div className="hidden md:flex flex-row items-center gap-5">
-            <Button variant="primary">Sign in</Button>
-            <Button variant="secondary">See a demo</Button>
+            <Button onClick={handleClick} variant="primary">Sign in</Button>
+            <Button onClick={handleClick} variant="secondary">See a demo</Button>
           </div>
 
           {/* Mobile Hamburger Menu Button - Only visible on mobile */}
@@ -98,43 +99,40 @@ const Navbar = () => {
             {/* Mobile Navigation Links */}
             <ul className="flex flex-col gap-4 mb-6">
               <li>
-                <a
-                  href="/"
-                  onClick={(e) => {
-                    handleClick(e);
-                    setIsOpen(false);
-                  }}
+                <Link
+                  to="/"
+                  onClick={() => setIsOpen(false)}
                   className="block text-gray-800 hover:text-gray-600 transition-colors py-2"
                 >
                   Company
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/resources"
+                <Link
+                  to="/resources"
                   onClick={() => setIsOpen(false)}
                   className="block text-gray-800 hover:text-gray-600 transition-colors py-2"
                 >
                   Resources
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/customers"
+                <Link
+                  to="/customers"
                   onClick={() => setIsOpen(false)}
                   className="block text-gray-800 hover:text-gray-600 transition-colors py-2"
                 >
                   Customers
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/pricing"
+                <Link
+                  to="/pricing"
                   onClick={() => setIsOpen(false)}
                   className="block text-gray-800 hover:text-gray-600 transition-colors py-2"
                 >
                   Pricing
-                </a>
+                </Link>
               </li>
             </ul>
 

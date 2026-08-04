@@ -1,15 +1,26 @@
-import Footer from './components/Footer'
-import Hero from './components/Hero'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Footer from './components/Footer'
+import Pricing from './pages/pricing'
+
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Footer />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={
+            <>
+              <Hero />
+              <Footer />
+            </>
+          } />
+          <Route path='/pricing' element={<Pricing />} />
+        </Routes>
+      </BrowserRouter>
     </>
-    
   )
 }
 
