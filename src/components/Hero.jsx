@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section className="p-10 items-center">
         <div className="flex flex-col justify-center gap-1">
-            <h1 className="text-4xl font-semibold">Time is money. Save both</h1>
+            <h1 className="text-6xl font-semibold">Time is money. Save both</h1>
             <p className="text-zinc-600">Cards, expenses, bill payements, and banking - in the blink of AI.</p>
             <div className='mt-2'>
                 <button onClick={handleClick} 

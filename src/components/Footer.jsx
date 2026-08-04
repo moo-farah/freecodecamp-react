@@ -44,10 +44,12 @@ const Footer = () => {
       </div>
 
       <hr className="my-8 border-[#8A8A8A]" />
-
-      <p className="text-[#8A8A8A] text-xs sm:text-sm">
-        &copy; {new Date().getFullYear()} Ramp. All rights reserved.
-      </p>
+      <div className="flex justify-end">
+        <p className="text-[#8A8A8A] text-xs sm:text-sm">
+          &copy; {new Date().getFullYear()} Ramp. All rights reserved.
+        </p>
+      </div>
+     
   </footer>
     </>
    

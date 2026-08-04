@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "./Button";
 
 const Logo = () => (
@@ -13,30 +14,140 @@ const Logo = () => (
   </svg>
 );
 
+const HamburgerIcon = ({ isOpen }) => (
+  <svg
+    className={`w-6 h-6 cursor-pointer transition-transform duration-300 ${isOpen ? "rotate-90" : ""}`}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    {isOpen ? (
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+    ) : (
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+    )}
+  </svg>
+);
+
 function handleClick(e) {
   e.preventDefault();
   console.log("clicked", e.target);
 }
 
 const Navbar = () => {
-  return (
-   <nav className="sticky top-0 px-4 py-5 border-[#8A8A8A]">
-      <div className="flex flex-row justify-between items-center">
-        <Logo />
-        <ul className="flex flex-row items-center gap-4">
-          <li><a href="/" onClick={handleClick}>Company</a></li>
-          <li><a href="/resources">Resources</a></li>
-          <li><a href="/customers">Customers</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-        </ul>
+  const [isOpen, setIsOpen] = useState(false);
 
-        <div className="flex flex-row items-center gap-5">
-          <Button variant="primary">Sign in</Button>
-           <Button variant="secondary">See a demo</Button>
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <nav className="sticky top-0 px-4 py-5 border-b border-[#8A8A8A] bg-white shadow-sm z-50">
+      <div className="max-w-7xl mx-auto">
+        {/* Main navbar container */}
+        <div className="flex flex-row justify-between items-center">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Logo />
+          </div>
+
+          {/* Desktop Navigation - Hidden on mobile */}
+          <ul className="hidden md:flex flex-row items-center gap-8">
+            <li>
+              <a href="/" onClick={handleClick} className="text-gray-800 hover:text-gray-600 transition-colors">
+                Company
+              </a>
+            </li>
+            <li>
+              <a href="/resources" className="text-gray-800 hover:text-gray-600 transition-colors">
+                Resources
+              </a>
+            </li>
+            <li>
+              <a href="/customers" className="text-gray-800 hover:text-gray-600 transition-colors">
+                Customers
+              </a>
+            </li>
+            <li>
+              <a href="/pricing" className="text-gray-800 hover:text-gray-600 transition-colors">
+                Pricing
+              </a>
+            </li>
+          </ul>
+
+          {/* Desktop Buttons - Hidden on mobile */}
+          <div className="hidden md:flex flex-row items-center gap-5">
+            <Button variant="primary">Sign in</Button>
+            <Button variant="secondary">See a demo</Button>
+          </div>
+
+          {/* Mobile Hamburger Menu Button - Only visible on mobile */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
+          >
+            <HamburgerIcon isOpen={isOpen} />
+          </button>
         </div>
+
+        {/* Mobile Menu - Only visible when isOpen is true and on mobile screens */}
+        {isOpen && (
+          <div className="md:hidden mt-4 pt-4 border-t border-[#8A8A8A]">
+            {/* Mobile Navigation Links */}
+            <ul className="flex flex-col gap-4 mb-6">
+              <li>
+                <a
+                  href="/"
+                  onClick={(e) => {
+                    handleClick(e);
+                    setIsOpen(false);
+                  }}
+                  className="block text-gray-800 hover:text-gray-600 transition-colors py-2"
+                >
+                  Company
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/resources"
+                  onClick={() => setIsOpen(false)}
+                  className="block text-gray-800 hover:text-gray-600 transition-colors py-2"
+                >
+                  Resources
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/customers"
+                  onClick={() => setIsOpen(false)}
+                  className="block text-gray-800 hover:text-gray-600 transition-colors py-2"
+                >
+                  Customers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/pricing"
+                  onClick={() => setIsOpen(false)}
+                  className="block text-gray-800 hover:text-gray-600 transition-colors py-2"
+                >
+                  Pricing
+                </a>
+              </li>
+            </ul>
+
+            {/* Mobile Buttons */}
+            <div className="flex flex-col gap-3">
+              <Button variant="primary">Sign in</Button>
+              <Button variant="secondary">See a demo</Button>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
