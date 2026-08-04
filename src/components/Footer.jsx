@@ -24,15 +24,15 @@ const footerColumns = [
 const Footer = () => {
   return (
     <>
-    <footer className="bg-[#1A1919] text-[#F4F2EF] px-8 py-16 text-sm">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+    <footer className="bg-[#1A1919] text-[#F4F2EF] px-4 sm:px-8 py-16">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-8">
         {footerColumns.map((column) => (
           <div key={column.title}>
             <ul className="flex flex-col gap-3">
               <li className="font-semibold text-[#F4F2EF]">{column.title}</li>
               {column.links.map((link) => (
                 <li key={link}>
-                  <a href="/" className="text-[#8A8A8A] hover:text-[#F4F2EF] hover:underline transition-colors"
+                  <a href="/" className="text-xs sm:text-sm text-[#8A8A8A] hover:text-[#F4F2EF] hover:underline transition-colors"
                   >
                     {link}
                   </a>
@@ -43,7 +43,9 @@ const Footer = () => {
         ))}
       </div>
 
-      <p className="mt-16 text-[#8A8A8A] text-sm">
+      <hr className="my-8 border-[#8A8A8A]" />
+
+      <p className="text-[#8A8A8A] text-xs sm:text-sm">
         &copy; {new Date().getFullYear()} Ramp. All rights reserved.
       </p>
   </footer>
