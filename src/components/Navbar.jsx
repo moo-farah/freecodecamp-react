@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Logo = () => (
   <svg width="75" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,13 +31,14 @@ const HamburgerIcon = ({ isOpen }) => (
   </svg>
 );
 
-function handleClick(e) {
-  e.preventDefault();
-  console.log("clicked", e.target);
-}
+// function handleClick(e) {
+//   e.preventDefault();
+//   console.log("clicked", e.target);
+// }
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { loginWithRedirect } = useAuth0();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -78,8 +80,8 @@ const Navbar = () => {
 
           {/* Desktop Buttons - Hidden on mobile */}
           <div className="hidden md:flex flex-row items-center gap-5">
-            <Button onClick={handleClick} variant="primary">Sign in</Button>
-            <Button onClick={handleClick} variant="secondary">See a demo</Button>
+            <Button onClick={() => loginWithRedirect()} variant="primary">Sign in</Button>
+            <Button onClick={() => loginWithRedirect()}variant="secondary">See a demo</Button>
           </div>
 
           {/* Mobile Hamburger Menu Button - Only visible on mobile */}
