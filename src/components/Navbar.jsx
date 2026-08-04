@@ -31,11 +31,6 @@ const HamburgerIcon = ({ isOpen }) => (
   </svg>
 );
 
-// function handleClick(e) {
-//   e.preventDefault();
-//   console.log("clicked", e.target);
-// }
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { loginWithRedirect } = useAuth0();
@@ -45,7 +40,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 px-4 py-5 border-b border-[#8A8A8A] bg-white shadow-sm z-50">
+    <nav className="sticky top-0 px-4 py-5 border-[#8A8A8A] bg-white shadow-sm z-50">
       <div className="max-w-7xl mx-auto">
         {/* Main navbar container */}
         <div className="flex flex-row justify-between items-center">

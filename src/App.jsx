@@ -3,6 +3,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
 import Pricing from './pages/Pricing'
+import Customer from './pages/Customer'
+import Resource from './pages/Resource'
 
 
 const App = () => {
@@ -18,6 +20,8 @@ const App = () => {
             </>
           } />
           <Route path='/pricing' element={<Pricing />} />
+          <Route path='/customers' element={<Customer />} />
+          <Route path='/resources' element={<Resource />} />
         </Routes>
       </BrowserRouter>
     </>
