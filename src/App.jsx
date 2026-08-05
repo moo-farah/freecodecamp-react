@@ -10,22 +10,23 @@ import Resource from './pages/Resource'
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={
-            <>
-              <Hero />
-              <Footer />
-            </>
-          } />
-          <Route path='/pricing' element={<Pricing />} />
-          <Route path='/customers' element={<Customer />} />
-          <Route path='/resources' element={<Resource />} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={
+              <>
+                <Hero />
+                <Footer />
+              </>
+            } />
+            <Route path='/pricing' element={<Pricing />} />
+            <Route path='/customers' element={<Customer />} />
+            <Route path='/resources' element={<Resource />} />
+          </Routes>
+        </BrowserRouter>
     </>
   )
 }
 
 export default App
+
