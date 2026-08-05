@@ -15,7 +15,7 @@ const Hero = () => {
             <p className="text-zinc-600">Cards, expenses, bill payements, and banking - in the blink of AI.</p>
             <div className='mt-2'>
                 <button onClick={handleClick} 
-                className='bg-amber-800 hover:bg-amber-400 text-white px-4 py-2 rounded-full flex items-center gap-2 font-medium transition-colors'
+                className='bg-amber-400 hover:bg-amber-500 text-black px-4 py-2 rounded-full flex items-center gap-2 font-medium text-sm transition-colors'
                 >
 
                   Download for free

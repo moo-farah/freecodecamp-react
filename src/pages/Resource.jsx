@@ -6,7 +6,6 @@ const Resource = () => {
      <div>Resource</div>
      <Footer />
     </>
-   
   )
 }
 

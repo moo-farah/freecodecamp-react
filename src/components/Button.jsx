@@ -1,6 +1,6 @@
 const variants ={
   primary: "hover:bg-amber-400 text-black",
-  secondary: "bg-amber-500 hover:bg-amber-400 text-[#1D1D1F]",
+  secondary: "bg-amber-400 hover:bg-amber-600 text-[#1D1D1F]",
 };
 
 function handleClick() {

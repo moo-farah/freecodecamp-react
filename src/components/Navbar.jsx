@@ -76,7 +76,7 @@ const Navbar = () => {
           {/* Desktop Buttons - Hidden on mobile */}
           <div className="hidden md:flex flex-row items-center gap-5">
             <Button onClick={() => loginWithRedirect()} variant="primary">Sign in</Button>
-            <Button onClick={() => loginWithRedirect()}variant="secondary">See a demo</Button>
+            <Button onClick={() => loginWithRedirect()}variant="secondary">Let's connect</Button>
           </div>
 
           {/* Mobile Hamburger Menu Button - Only visible on mobile */}
@@ -136,7 +136,7 @@ const Navbar = () => {
             {/* Mobile Buttons */}
             <div className="flex flex-col gap-3">
               <Button variant="primary">Sign in</Button>
-              <Button variant="secondary">See a demo</Button>
+              <Button variant="secondary">Let's connect</Button>
             </div>
           </div>
         )}
