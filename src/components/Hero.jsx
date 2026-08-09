@@ -22,8 +22,7 @@ const Hero = () => {
                   <ArrowDown size={18} />
                 </button>
             </div>
-            <img src="/src/assets/2.png" alt="Hero" className="mt-8 max-w-full" />
-            
+            <img src="/src/assets/2.png" alt="Hero" className="mt-8 max-w-full" />  
         </div>
        
 

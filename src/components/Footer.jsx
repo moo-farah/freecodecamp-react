@@ -1,3 +1,5 @@
+import { FaFacebook } from "react-icons/fa";
+
 const footerColumns = [
   {
     title: "About us",
@@ -51,9 +53,10 @@ const Footer = () => {
       </div>
      
   </footer>
+  <FaFacebook size={24} color="292929" />
     </>
    
   )
 }
 
-export default Footer
+export default Footer;
