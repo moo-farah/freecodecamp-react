@@ -1,4 +1,5 @@
 import { FaFacebook } from "react-icons/fa";
+import { LiaLinkedin } from "react-icons/lia";
 
 const footerColumns = [
   {
@@ -54,6 +55,7 @@ const Footer = () => {
      
   </footer>
   <FaFacebook size={24} color="292929" />
+  <LiaLinkedin />
     </>
    
   )
