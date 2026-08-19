@@ -2,14 +2,18 @@
 
 @import "tailwindcss";
 
-theme {
+@layer base {
     html {
-        font-size: 'Inter', system-ui, -apple-system, sans-serif;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
     }
 }
 
 :root {
-    --background: var(#ffffff);
+    --background: #ffffff;
+}
+
+html.dark {
+    --background: #030712;
 }
 
 body {

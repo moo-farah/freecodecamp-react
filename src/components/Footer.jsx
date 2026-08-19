@@ -1,5 +1,6 @@
 import { FaFacebook } from "react-icons/fa";
-import { LiaLinkedin } from "react-icons/lia";
+import { CiLinkedin } from "react-icons/ci";
+import { FaInstagram } from "react-icons/fa";
 
 const footerColumns = [
   {
@@ -52,10 +53,14 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} Ramp. All rights reserved.
         </p>
       </div>
-     
+      <div className="mt-4 flex justify-end items-center gap-1.5">
+      <FaFacebook className="text-zinc-100 hover:text-zinc-300" size={20} />
+      <CiLinkedin className="text-zinc-100 hover:text-zinc-300" size={20} />
+      <FaInstagram className="text-zinc-100 hover:text-zinc-300" size={20}/>
+      </div>
+      
   </footer>
-  <FaFacebook size={24} color="292929" />
-  <LiaLinkedin />
+
     </>
    
   )
