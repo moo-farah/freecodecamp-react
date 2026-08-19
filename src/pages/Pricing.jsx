@@ -86,7 +86,7 @@ const Pricing = () => {
             key={index}
             className={`rounded-lg overflow-hidden transition-all ${
               plan.highlighted
-                ? "md:scale-105 bg-gradient-to-br from-amber-400 to-amber-500 text-white shadow-2xl"
+                ? "md:scale-105 bg-linear-to-br from-amber-400 to-amber-500 text-white shadow-2xl"
                 : "bg-white text-gray-900 shadow-lg hover:shadow-xl"
             }`}
           >
@@ -142,7 +142,7 @@ const Pricing = () => {
                     <li key={featureIndex} className="flex items-start gap-3">
                       <Check
                         size={20}
-                        className={`flex-shrink-0 mt-0.5 ${
+                        className={`shrink-0 mt-0.5 ${
                           plan.highlighted ? "text-amber-100" : "text-green-500"
                         }`}
                       />
